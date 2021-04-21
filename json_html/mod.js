@@ -2,6 +2,8 @@ function handleRequest(request) {
   const { pathname } = new URL(request.url);
 
   if (pathname.startsWith("/html")) {
+    console.log("call html");
+
     const html = `<html>
       <p><b>Message:</b> Hello from Deno Deploy.</p>
       </html>`;
@@ -19,6 +21,7 @@ function handleRequest(request) {
   }
 
   if (pathname.startsWith("/json")) {
+    console.log("call json");
     // Use stringify function to convert javascript object to JSON string.
     const json = JSON.stringify({
       message: "Hello from Deno Deploy",
